@@ -1,0 +1,9 @@
+INPUT DATA FIELD NAMES COHD
+
+coach - patid,street_address,city,state,zip
+
+nocho - ID,First_Name,Last_Name,Visit_Year_Type,Address,Apt,City,State,Zip_code,Home_Telephone,Bus_Telephone,CellPhone,Refusal,NoFurtherContact
+
+nocip - ID,First_Name,Last_Name,Address,Apt,City,State,Zip_code,Telephone1,Telephone1_desc,Telephone2,Telephone2_desc,Telephone3,Telephone3_desc,Telephone4,Telephone4_desc
+
+nomem - NOMEM_ID,First_Name,Last_Name,Address,Apt,City,State,Zip_code

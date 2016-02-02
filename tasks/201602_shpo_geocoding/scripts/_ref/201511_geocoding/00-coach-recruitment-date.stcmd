@@ -1,0 +1,26 @@
+// This Stat/Transfer command file was automatically generated on November 23, 2015 at 8:23 AM (v11.2.2106.0521, Windows NT 6.1 (build 7601, Service Pack 1))
+//ENCODING UTF-8
+set numeric-names      n
+set log-level          e
+set in-encoding        system
+set out-encoding       system
+set enc-errors         sub
+set enc-sub-char       _
+set enc-error-limit    100
+set var-case-ci        preserve-always
+set preserve-label-sets y
+set preserve-str-widths n
+set map-miss-with-labs n
+set user-miss          all
+set map-user-miss      n
+set date-fmt-write     "%m/%d/%Y"
+set time-fmt-write     "%0H:%0M:%0S"
+set datetime-fmt-write "%m/%d/%Y %0H:%0M:%0S"
+set num-miss-wr        none
+set delimiter-wr       comma
+set quote-char-wr      "
+set write-field-names  y
+
+copy  "Y:/Desktop/COACH recruitment date.sav" delim "Y:/Desktop/COACH recruitment date.csv" 
+
+quit

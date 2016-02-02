@@ -1,0 +1,45 @@
+geocode instructions
+
+At end say:
+missing and ungeocodable addresses.
+missing dates. 
+
+data
+----
+COACH - 251
+NOCIP - 139
+NOCHOP - 366 - these latest three total is 756. 
+
+And the NOMEM - 671 (1427 total) should be considered as the 4th dataset?
+
+duplicate ids:
+20048
+20403
+20415
+20749
+22136
+
+dup checks: 
+20048 - nocho, exact dup. 
+20403 - nocho, exact dup. 
+20415 - nocho, exact dup. 
+20749 - nocho, exact dup. 
+22136 - nocho, exact dup. except 1 day off
+
+Geocoding project reference:
+see:
+resistome (rise)
+
+
+To Do:
+1) address the zip's that end up having two boro's, ie. Marble Hill. 
+2) Copy BIN (building points) XY stuff
+3) 
+
+
+Completed: 
+1) Strip/split APT
+1) ZIP codes as only 5 digits, get rid of 4 digit extension
+1) Remove, collapse duplicates, get total N
+- maybe try collapsing by concating all the address vars into one col, then groupby, then split by comma [0]
+- then assign unique address id - uaid. 
