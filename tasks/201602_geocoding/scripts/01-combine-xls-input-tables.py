@@ -6,18 +6,27 @@ addr_parser = StreetAddressParser()
 
 from _settings import *
 
-inXLS = wdi + 'address/USN_Geocode.xlsx'
+inXLS = wdi + 'address/20160205/USN_Geocode.xlsx'
 
 
 df1 = pd.io.excel.read_excel(inXLS, 'Jackson_Heights_HD')
 df2 = pd.io.excel.read_excel(inXLS, 'Broadway_Flushing_HD')
-
+df3 = pd.io.excel.read_excel(inXLS, 'JFK_INDV_GC')
+df4 = pd.io.excel.read_excel(inXLS, 'LGA_INDV_GC')
 
 print df1.head(10)
 print df2.head(10)
+print df3.head(10)
+print df4.head(10)
+
+df3 = df3[['USN_No','Resource_Address']]
+df4 = df4[['USN_No','Resource_Address']]
 
 df1.to_csv(wi + 'address/jh.csv', index=False, encoding='utf-8')
 df2.to_csv(wi + 'address/bf.csv', index=False, encoding='utf-8')
+df3.to_csv(wi + 'address/jf.csv', index=False, encoding='utf-8')
+df4.to_csv(wi + 'address/lg.csv', index=False, encoding='utf-8')
+
 
 # keepCols_1 = ['patid','street_address','city','state','zip','dateint2']
 # keepCols_2 = ['ID','Address','Apt','City','State','Zip_code','Visit_Date']
@@ -36,22 +45,30 @@ df2.to_csv(wi + 'address/bf.csv', index=False, encoding='utf-8')
 # df3 = df3[keepCols_3]
 # df4 = df4[keepCols_4]
 
-renameCols1 = ['id','address']
-renameCols2 = ['id','address']
+renameCols = ['id','address']
 
-df1.columns = renameCols1
-df2.columns = renameCols2
+
+df1.columns = renameCols
+df2.columns = renameCols
+df3.columns = renameCols
+df4.columns = renameCols
 
 df1['proj'] = 'jh'
 df2['proj'] = 'bf'
+df1['proj'] = 'jf'
+df2['proj'] = 'lg'
 
-df1.to_csv(wi + 'address/jf_cln.csv', index=False, encoding='utf-8')
+df1.to_csv(wi + 'address/jh_cln.csv', index=False, encoding='utf-8')
 df2.to_csv(wi + 'address/bf_cln.csv', index=False, encoding='utf-8')
+df3.to_csv(wi + 'address/jf_cln.csv', index=False, encoding='utf-8')
+df4.to_csv(wi + 'address/lg_cln.csv', index=False, encoding='utf-8')
 
 print df1.head(10)
 print df2.head(10)
+print df3.head(10)
+print df4.head(10)
 
-df = pd.concat([df1,df2], axis=0)
+df = pd.concat([df1,df2,df3,df4], axis=0)
 df = df[['id','address','proj']] 
 
 df['address_cln_1'] = df.address.str.split(',',1).str[0].str.upper()
@@ -193,6 +210,7 @@ df['boro']   = df.county.map(str)#.apply(boroCode)
 
 print df.head(20)
 
+SEND TO ROUND 000000
 
 df['suite_type'] = df.address.map(str).apply(addrSuiteType)
 df['suite_num']    = df.address.map(str).apply(addrSuiteNumber)
@@ -207,6 +225,12 @@ ouAddress   = wp+'address/rnd1/address.csv'
 df.to_csv(ouAddressIn, index=False) #Rewriting (overwriting) this file so it has the UID
 
 df = df[['uid','hn','street','boro','state']]#,'zip']]
+
+
+
+SEND TO ROUND 000000
+
+
 
 df.to_csv(ouAddress, index=False)
 

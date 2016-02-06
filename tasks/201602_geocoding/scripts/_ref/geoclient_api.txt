@@ -1,0 +1,18 @@
+curl -v  -X GET "https://api.cityofnewyork.us/geoclient/v1/address.json?houseNumber=133&street=Thames+St&borough=Brooklyn&app_id=41cc2f11&app_key=9c9f84d37a3b00a56444db091c8812a6"
+
+
+curl -v  -X GET "https://api.cityofnewyork.us/geoclient/v1/address.xml?houseNumber=133&street=Thames+St&borough=Brooklyn&app_id=41cc2f11&app_key=9c9f84d37a3b00a56444db091c8812a6"
+
+
+curl -v  -X GET "https://api.cityofnewyork.us/geoclient/v1/address.xml?houseNumber=3&street=Brooklyn+Navy+Yard&borough=Brooklyn&app_id=41cc2f11&app_key=9c9f84d37a3b00a56444db091c8812a6"
+
+
+curl -v  -X GET "https://api.cityofnewyork.us/geoclient/v1/address.xml?houseNumber=3&street=Brooklyn+Navy+Yard&borough=Brooklyn&app_id=41cc2f11&app_key=9c9f84d37a3b00a56444db091c8812a6"
+
+curl -v  -X GET "https://api.cityofnewyork.us/geoclient/v1/address.xml?houseNumber=390-33&street=160TH ST,&borough=Queens&app_id=41cc2f11&app_key=9c9f84d37a3b00a56444db091c8812a6"
+
+https://api.cityofnewyork.us/geoclient/v1/address.xml?houseNumber=390-33&street=160TH ST,&borough=Queens&app_id=41cc2f11&app_key=9c9f84d37a3b00a56444db091c8812a6
+
+https://api.cityofnewyork.us/geoclient/v1/address.xml?houseNumber=390-33&street=160TH ST,&borough=Queens&app_id=41cc2f11&app_key=9c9f84d37a3b00a56444db091c8812a6
+
+https://api.cityofnewyork.us/geoclient/v1/address.json?houseNumber=44-78&street=23RD ST,&borough=Queens&app_id=41cc2f11&app_key=9c9f84d37a3b00a56444db091c8812a6   
