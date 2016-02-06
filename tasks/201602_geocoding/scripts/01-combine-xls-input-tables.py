@@ -8,7 +8,6 @@ from _settings import *
 
 inXLS = wdi + 'address/20160205/USN_Geocode.xlsx'
 
-
 df1 = pd.io.excel.read_excel(inXLS, 'Jackson_Heights_HD')
 df2 = pd.io.excel.read_excel(inXLS, 'Broadway_Flushing_HD')
 df3 = pd.io.excel.read_excel(inXLS, 'JFK_INDV_GC')
@@ -191,9 +190,6 @@ df['street'] = df.address.map(cleanStreet)
 
 #gotta get up to speed here, no ZIP, just pull boro from address string, first let's get the df
 
-
-
-
 # def find_between(s, first, last):
 #     try:
 #         start = s.index( first ) + len( first )
@@ -205,12 +201,9 @@ df['street'] = df.address.map(cleanStreet)
 #df['county'] = df.streetaddress.map(str).apply(find_between(i, ', ', ' NY'))
 df['county'] = (df.streetaddress.str.split(' NY',1).str[0]).str.split(', ',1).str[1]
 
-
 df['boro']   = df.county.map(str)#.apply(boroCode)
 
 print df.head(20)
-
-SEND TO ROUND 000000
 
 df['suite_type'] = df.address.map(str).apply(addrSuiteType)
 df['suite_num']    = df.address.map(str).apply(addrSuiteNumber)
@@ -220,18 +213,14 @@ df['state'] = 'NY'
 df.to_csv(wi + 'address/address_only_rem_dups.csv', index=False, encoding='utf-8')
 
 ouAddressIn = wi+'address/address.csv'
-ouAddress   = wp+'address/rnd1/address.csv'
+ouAddress   = wp+'address/rnd0/address.csv'
 
 df.to_csv(ouAddressIn, index=False) #Rewriting (overwriting) this file so it has the UID
 
 df = df[['uid','hn','street','boro','state']]#,'zip']]
 
-
-
-SEND TO ROUND 000000
-
-
-
 df.to_csv(ouAddress, index=False)
 
 df.head(100)
+
+
