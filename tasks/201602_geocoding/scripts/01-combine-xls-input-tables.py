@@ -101,7 +101,7 @@ df['addr_concat'] =  df.id.map(str) + '^' + df.address_cln_2.map(str) + '^' + df
 # dfg = df.groupby(['addr_concat'],as_index=False).sum()
 
 # print len(df.index)
-
+df = df.reset_index(drop=True)
 df['uid'] = df.index + 90001
 # # dfg['zip']  = dfg.addr_concat.str.split('^',5).str[4]  #NO FUCKING ZIP, just boro
 
