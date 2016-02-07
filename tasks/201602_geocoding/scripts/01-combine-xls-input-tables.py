@@ -54,8 +54,8 @@ df4.columns = renameCols
 
 df1['proj'] = 'jh'
 df2['proj'] = 'bf'
-df1['proj'] = 'jf'
-df2['proj'] = 'lg'
+df3['proj'] = 'jf'
+df4['proj'] = 'lg'
 
 df1.to_csv(wi + 'address/jh_cln.csv', index=False, encoding='utf-8')
 df2.to_csv(wi + 'address/bf_cln.csv', index=False, encoding='utf-8')
